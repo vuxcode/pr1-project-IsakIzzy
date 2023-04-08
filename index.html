@@ -5,24 +5,59 @@
     <head>
         <title>Isaks Kökshjälp (Working Title). Gör det lite enklare att hålla reda på köket.</title>
         <style>
-            p {
+            main 
+            {
+                align-items:
+            }
+            p 
+            {
                 text-align: center;
             }
-            li {
+            li 
+            {
                 text-align: center;
+            }
+            .left-section 
+            {
+                background-color:aqua;
+            }
+            .middle-section
+            {
+                background-color: ghostwhite;             
+            }
+            .right-section
+            {
+                background-color: chartreuse;
             }
         </style>
     </head>
         <body>
-            <div class="recipe-title">   
-                <p>Ägg</p>
-               <!-- I think the website will be in Swedish, since it makes most sense since the website will be used in Sweden with Swedish products. However, tags and such will be in english.This text sould be centered-->                     
+            <main>
+            <div class="left-section">
+                <div class="recipie-list"><p>Recipies List</p>
+                </div>
+                <div class="ingredients-storage-list">
+                    <p>Ingredients in storage</p>                   
+                </div>
             </div>
-            <div class="recipe-content">
-                <li>Koka upp vatten i en kastrull. Vattnet ska precis kunna täcka äggen.<br></li>
-                <li>Klart</li>
-                
+            <div class="middle-section">
+                <div class="recipe-title">   
+                    <p>Ägg</p>
+                    <!-- I think the website will be in Swedish, since it makes most sense since the website will be used in Sweden with Swedish products. However, tags and such will be in english.This text sould be centered-->                     
+                </div>
+                <div class="recipe-content">
+                    <li>Koka upp vatten i en kastrull. Vattnet ska precis kunna täcka äggen.</li>
+                    <li>Klart</li>
+                </div>
             </div>
-
+            <div class="right-section">
+                <div class="timer-section">
+                    <p>Timer coming soon</p>
+                </div>
+                <div class="ingredients-needed-list">     
+                    <p>Ingredients needed</p>              
+                </div>
+            </div>
+        </main>
         </body>
 </html>
