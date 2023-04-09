@@ -5,11 +5,19 @@
     <head>
         <title>Isaks Kökshjälp (Working Title). Gör det lite enklare att hålla reda på köket.</title>
         <style>
+            body
+            {
+                margin: 0px;
+            }
             main 
             {
-                align-items:
+
             }
             p 
+            {
+                text-align: center;
+            }
+            h1
             {
                 text-align: center;
             }
@@ -20,14 +28,42 @@
             .left-section 
             {
                 background-color:aqua;
+                display: inline-block;
+                width: 25%;
+            }
+            .recipie-list
+            {
+                border: solid;
+                border-width: thin;
+            }
+            .ingredients-storage-list
+            {
+                border: solid;
+                border-width: thin;
             }
             .middle-section
             {
-                background-color: ghostwhite;             
+                background-color: ghostwhite;    
+                display: inline-block;
+                width: 49%;    
+                border: solid;
+                border-width: thin;
             }
             .right-section
             {
                 background-color: chartreuse;
+                display: inline-block;
+                width: 25%;
+            }
+            .timer-section
+            {
+                border: solid;
+                border-width: thick;
+            }
+            .ingredients-needed-list
+            {
+                border: dotted;
+                border-width: medium;
             }
         </style>
     </head>
@@ -42,7 +78,7 @@
             </div>
             <div class="middle-section">
                 <div class="recipe-title">   
-                    <p>Ägg</p>
+                    <h1>Ägg</h1>
                     <!-- I think the website will be in Swedish, since it makes most sense since the website will be used in Sweden with Swedish products. However, tags and such will be in english.This text sould be centered-->                     
                 </div>
                 <div class="recipe-content">

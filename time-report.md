@@ -4,6 +4,8 @@
 
 
 2023-4-8 11:00 Worked on getting the basic structure for divs for the website for 1 hour.
+2023-4-9 10:00 Eperimented with display settings, borders and added some more CSS values for 1 hour. Maybe 30 mins since some time was spent researching. 
+
 For example: 
 
 - 2022-10-24 18:00 Worked for 1 hour.
