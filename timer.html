@@ -1,0 +1,29 @@
+<script>
+    // Made a new file to try to create a timer. I want the user to be able to write the numbers in by themselves on the webpage. But for now, I'll use the alert and prompt functions. 
+    var minutes = prompt("Select number of minutes");
+    var seconds = prompt("Select number of seconds");
+    let newSecond;
+    // This calculation should turn the time selected into seconds. So each minute is 60 seconds. 
+    minutes = Number(minutes);
+    seconds = Number(seconds);
+    var totalTime = (seconds + (minutes* 60));
+    alert(totalTime);
+    // Since the getSeconds method wants to count in miliseconds, I will multiply the totalTime by 1k.
+    // Since I need to tell the program that timeCalculation is a Number, I decided the best way probably is to first tell that it exists but only has a 0 value, but then I can tell that it is supposed to be a number before I use it in the calculation and there update the value.
+    var timeCalculation = 0;
+    timeCalculation = Number(timeCalculation);
+
+    var timeCalculation = (totalTime * 1000);
+    alert(timeCalculation);
+    // So for example, if the user put 1 minute and 30 seconds, the totalTime should be 90 seconds. 
+
+    // This does not work... but it might be a step closer.
+    while (totalTime > 0)
+    {
+        newSecond =  setTimeout(timeCalculation * 1000, "1 second");
+        console.log(newSecond);
+        var timeCalculation = timeCalculation - 1000;
+        break;
+    }
+
+</script>
