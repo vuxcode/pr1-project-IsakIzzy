@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <title>Isaks Kökshjälp (Working Title). Gör det lite enklare att hålla reda på köket.</title>
+        <title>Easy, Healthy and Tasty Recipies (Working Title). Gör det lite enklare att hålla reda på köket.</title>
         <style>
             body
             {
@@ -11,7 +11,8 @@
             }
             main 
             {
-
+                display: flex;
+                padding-bottom: 200px;
             }
             p 
             {
@@ -25,9 +26,31 @@
             {
                 text-align: center;
             }
+            a
+            {
+                text-align: center;
+                margin: 0px 20px 0px 20px;
+            }
+            a:link, a:visited
+            {
+                color: white;
+            }
+            a:hover
+            {
+                color: grey; 
+            }
+            a:active 
+            {
+                color: floralwhite;
+            }
+            .header
+            {
+                background-color:ghostwhite;
+                padding: 10px 0px 10px 0px;
+            }
             .left-section 
             {
-                background-color:aqua;
+                background-color:ghostwhite;
                 display: inline-block;
                 width: 25%;
             }
@@ -51,7 +74,7 @@
             }
             .right-section
             {
-                background-color: chartreuse;
+                background-color: ghostwhite;
                 display: inline-block;
                 width: 25%;
             }
@@ -70,13 +93,36 @@
                 
                 background-color: lime;
                 border-radius: 5%;
+                padding: 10px 10px 10px 10px;
+                margin: 20px auto 20px;
+            }
+            .complete-recipe-button
+            {
+                background-color:lime;
+                border-radius: 5%;
+                padding: 10px 10px 10px 10px;
+                margin: 20px 0px 20px 0px;
+            }
+            .footer
+            {
+                display: block;
+                background-color: black;
+                color: white;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                text-align: center;
             }
         </style>
     </head>
         <body>
+            <div class="header">
+                <h1>Easy, Tasty and Healthy Recipies</h1>
+            </div>
             <main>
             <div class="left-section">
                 <div class="recipie-list"><p>Recipies List</p>
+                    <li>Ägg</li>
+                    <br>
                 </div>
                 <div class="ingredients-storage-list">
                     <p>Ingredients in storage</p>
@@ -92,7 +138,7 @@
                 <div class="recipe-content">
                     <li>Koka upp vatten i en kastrull. Vattnet ska precis kunna täcka äggen.</li>
                     <li>Klart</li>
-                    <button>Färdig med recept</button>
+                    <button class="complete-recipe-button">Färdig med recept</button>
                 </div>
             </div>
             <div class="right-section">
@@ -104,5 +150,10 @@
                 </div>
             </div>
         </main>
+        <div class="footer">
+            <a href="/About-page">About page</a>
+            <a href="/Contacts-page">Contacts</p>
+
+        </div>
         </body>
 </html>
