@@ -1,0 +1,109 @@
+body
+{
+    margin: 0px;
+}
+main 
+{
+    display: flex;
+    padding-bottom: 200px;
+}
+p 
+{
+    text-align: center;
+}
+h1
+{
+    text-align: center;
+}
+li 
+{
+    text-align: center;
+}
+a
+{
+    text-align: center;
+    margin: 0px 20px 0px 20px;
+}
+a:link, a:visited
+{
+    color: white;
+}
+a:hover
+{
+    color: grey; 
+}
+a:active 
+{
+    color: floralwhite;
+}
+.header
+{
+    background-color:ghostwhite;
+    padding: 10px 0px 10px 0px;
+}
+.left-section 
+{
+    background-color:ghostwhite;
+    display: inline-block;
+    width: 25%;
+}
+.recipie-list
+{
+    border: solid;
+    border-width: thin;
+}
+.ingredients-storage-list
+{
+    border: solid;
+    border-width: thin;
+}
+.middle-section
+{
+    background-color: ghostwhite;    
+    display: inline-block;
+    width: 49%;    
+    border: solid;
+    border-width: thin;
+}
+.right-section
+{
+    background-color: ghostwhite;
+    display: inline-block;
+    width: 25%;
+}
+.timer-section
+{
+    border: solid;
+    border-width: thick;
+}
+.ingredients-needed-list
+{
+    border: dotted;
+    border-width: medium;
+}
+.storage-add-button
+{
+    
+    background-color: lime;
+    border-radius: 5%;
+    padding: 10px 10px 10px 10px;
+    margin: 20px auto 20px;
+    display: block;
+}
+.complete-recipe-button
+{
+    background-color:lime;
+    border-radius: 5%;
+    padding: 10px 10px 10px 10px;
+    margin: 20px auto 20px;
+    display: block;
+}
+.footer
+{
+    display: block;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}

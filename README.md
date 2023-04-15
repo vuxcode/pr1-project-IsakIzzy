@@ -36,6 +36,15 @@ Today I will try to get the functions for a timer down.
 I will try to look a bit at how a countdown in JS should work. Before that, I decided to calculate the user input into seconds. The user can still enter minutes, but the minutes will be calculated into seconds with simple math. Im not sure if this is what I need yet.
 Found a method called setTimeout() that I think might be what Im looking for.
 
+4-15-23:
+
+Since the project is getting a bit larger now, and Im planing to expand with more pages, I decided to move all the CSS to a separate css file called style. Instead, I will reference to this file in the head section on each page.
+Yesterday, I made Fajitas. I took a picture and the recipe will be the first recipe on the page. 
+I wanted to take pictures of all the steps. But the images didn't live up to my expectations. Perhapse I'll try to do that in another recipe or some other time. 
+
+I think I know what I need to make the browse function work. 
+Its about using select and different option values in HTML. The next part is to have it recognize what is in storage and not. I could technically add options to each item with around 40 different values. But there must be a more efficient way to do this. There must be a way to reference to a options function. I will try to reference to it just like I refrenced to CSS. 
+
 
 
 # Project Summary
