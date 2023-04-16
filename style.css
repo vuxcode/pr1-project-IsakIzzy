@@ -1,3 +1,7 @@
+* 
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 body
 {
     margin: 0px;
@@ -57,13 +61,27 @@ a:active
     border: solid;
     border-width: thin;
 }
-.middle-section
-{
-    background-color: ghostwhite;    
+.middle-section {
+    background-color: ghostwhite;
     display: inline-block;
-    width: 49%;    
+    width: 49%;
     border: solid;
     border-width: thin;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.recipe-title
+{
+    font-size: 24px;
+}
+.recipe-description
+{
+    font-style: italic;
+    font-size: 12px;
+}
+.recipe-content {
+    list-style-type: numbers;
+    list-style-position: inside;
 }
 .right-section
 {
