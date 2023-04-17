@@ -45,6 +45,28 @@ I wanted to take pictures of all the steps. But the images didn't live up to my 
 I think I know what I need to make the browse function work. 
 Its about using select and different option values in HTML. The next part is to have it recognize what is in storage and not. I could technically add options to each item with around 40 different values. But there must be a more efficient way to do this. There must be a way to reference to a options function. I will try to reference to it just like I refrenced to CSS. 
 
+4-17-23:
+
+I just realized something and wanted to write it down... I think I am overthinking the whole thing about letting the user choose weather an item is gonna be listed in for instance, liters, grams or packages etc. 
+
+I figured that letting the user select a number is the easy part. But why should the user have to select what the item is meassured in? Why don't I just assign a set value. It will be much less code, and it actually mostly will make the most sense for the user aswell. Since I know know how the <Option> and <Select> inputs work, it would be nice to also let the user search for item. But in the beginning for this page, it won't be essential since it won't be that large for now... 
+
+So here is an example of how I mean and how I want the page to work instead. I think this will be much easier to create and also easier for the user to interact with.
+
+Let´s say the user has been to the food store and wants to add milk, tomato, chicken and salt to their inventory.
+Instead of having the user first have to pick the item, then a number and after that it´s property, I should just assign a set property for each item.
+
+So for instance:
+The user clicks milk. 
+The program will give the user to choose a number, and the text after will automatically be " Liters Milk". 
+User puts in 2 and the inventory will say 2 Liters Milk.
+If the next recipe the user makes uses 0.5 L of milk, the storage will be changed to 1.5 Liters of Milk after finnished. 
+
+The other items makes sense to set like this:
+Tomato 3 pieces (is this the correct english word for "styck"? :) )
+Chicken 1000 grams
+Salt 1 package. (It makes no sense to measure this. Since this is a "basic ingredient", it makes sense to not remove this from the inventory. Instead, if the user would run out of salt, the user should remove the item from the inventory list by themselves. However, if the recipe uses a package, lets say crushed tomatoes or something like that, it should be removed automatically.)
+
 
 
 # Project Summary
