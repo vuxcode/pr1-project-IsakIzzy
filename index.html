@@ -5,33 +5,59 @@
     <head>
         <title>Easy, Healthy and Tasty Recipies (Working Title). Gör det lite enklare att hålla reda på köket.</title>
         <link rel="stylesheet" href="style.css">
+        <!--link rel="javascript" href="javascript.js"-->
+        <script>
+        function popupRunner ()
+        {
+            document.getElementById('popup').style.visability="visable";
+        }
+        </script>
     </head>
         <body>
             <div class="header">
                 <h1>Easy, Tasty and Healthy Recipies</h1>
             </div>
             <main>
+                <!--This is just for when user pushes a button. Im not sure if I should place this on top. But we'll see.. I will test to put it at the very top of the main, and then the closing tag will be at the end of main to wrap the popup over the whole page... ok that didnt work. It actually just worked by adding it here. The bottom looses the dark background though for some reason. That I will look into later.-->
+            <div id= "popup" class="popup"> 
+                <div class="popup-content">
+                    <div class="close-window">Close Window</div>
+                    <h1>Select Ingredient to add:</h1>
+                    <select name="add-ingredients" id="add-ingredients-select">
+                        <Option value=""></Option>
+                        <option value="Chicken">Chicken</option>
+                        <option value="Yellow Onions">Yellow Onions</option><option value="Bell Pepper">Bell Pepper</option><option value="Fajita Seasoning">Fajita Seasoning</option><option value="Oil">Oil</option><option value="Sour Cream">Sour Cream</option><option value="Salsa">Salsa</option>
+                        <option value="Lime">Lime</option>
+                        <option value="Whole Wheat Tortillas">Whole Wheat Tortillas</option> </select>
+                        <button class="button" style=>Add to inventory</button>
+                </div>
+            </div>
+
+                 
             <div class="left-section">
                 <div class="recipie-list"><p>Recipies List</p>
-                    <li>Ägg</li>
-                    <li>Fajitas</li>
+                    <!--I have a Home link here for now. Later, it will be the site logo instead-->
+                    <li><a href="index.html">Home</a></li>                  
+                    <li><a href="fajitas.html">Fajitas</a></li>
                     <br>
                 </div>
                 <div class="ingredients-storage-list">
                     <p>Ingredients in storage</p>
-                    <!--Button should be centered. It isn't now, and Im not sure how to do that yet-->
-                    <button class="storage-add-button"> + Add more ingredients</button>                   
+                    <button onclick="popupRunner()" class="button"> + Add more ingredients<button>          
                 </div>
             </div>
-            <div class="middle-section">
-                <div class="recipe-title">   
-                    <h1>Ägg</h1>
-                    <!-- I think the website will be in Swedish, since it makes most sense since the website will be used in Sweden with Swedish products. However, tags and such will be in english.This text sould be centered-->                     
-                </div>
-                <div class="recipe-content">
-                    <li>Koka upp vatten i en kastrull. Vattnet ska precis kunna täcka äggen.</li>
-                    <li>Klart</li>
-                    <button class="complete-recipe-button">Färdig med recept</button>
+                    <!-- I think the website will be in Swedish, since it makes most sense since the website will be used in Sweden with Swedish products. However, tags and such will be in english.This text sould be centered-->  
+                    <div class="middle-section">
+                        <div class="recipe-title">   
+                            <h1>Welcome!</h1>
+                            <!-- I think the website will be in Swedish, since it makes most sense since the website will be used in Sweden with Swedish products. However, tags and such will be in english.This text sould be centered-->                     
+                        </div>
+                        <div class="recipe-content">
+                            <p>This websites purpose is to help you in the kitchen. While it will help you find healthy, easy and tasty recipies, it will also help you with organizing your storage and helping you with shopping lists.<p>                    
+                            <li>Select recipies at the top left corner of your screen.</li>
+                            <li>Click on the "Add more ingredients" to add items you have purchased to your inventory (Coming Soon)</li>
+                            <li>Soon, there will be a timer on the page.</li>
+                            <li>Theres a list of ingredients needed for each recipe. Soon, it will also tell you what items you need to purchase and what items you already have.</li>
                 </div>
             </div>
             <div class="right-section">
