@@ -68,6 +68,8 @@ Chicken 1000 grams
 Salt 1 package. (It makes no sense to measure this. Since this is a "basic ingredient", it makes sense to not remove this from the inventory. Instead, if the user would run out of salt, the user should remove the item from the inventory list by themselves. However, if the recipe uses a package, lets say crushed tomatoes or something like that, it should be removed automatically.)
 
 
+Styled the buttons. Will try to make the background get darker for a new window on the same site, like some websites do with logins. on the same site for the user to add items.
+
 
 # Project Summary
 

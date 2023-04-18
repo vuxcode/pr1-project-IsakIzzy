@@ -9,6 +9,7 @@
 2023-4-11 08:00 About Page and a button. 10 min
 2023-4-15 14:00 Added a recipe, moved CSS to its own file. 1 hour
 2023-4-16:14:00 Changed the font, added numbers to list properties and changed the layout a bit. 1 hour
+2023-4-18: 08:00 Button CSS.. Other time was spent trying, so 10 minutes.
 For example: 
 
 - 2022-10-24 18:00 Worked for 1 hour.
