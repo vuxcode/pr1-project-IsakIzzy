@@ -167,4 +167,5 @@ a:active
     {
         text-align: end;
         cursor: pointer;
+        display: flex;
     }

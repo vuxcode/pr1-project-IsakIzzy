@@ -11,6 +11,7 @@
 2023-4-16:14:00 Changed the font, added numbers to list properties and changed the layout a bit. 1 hour
 2023-4-18: 08:00 Button CSS.. Other time was spent trying, so 10 minutes.
 2023-4-18: 23:00 Got the layout for popup looking good. Almost got the button to work as intended. 1 hour
+2023-4-19: 08:00 Got the button function working 1 hour
 For example: 
 
 - 2022-10-24 18:00 Worked for 1 hour.
