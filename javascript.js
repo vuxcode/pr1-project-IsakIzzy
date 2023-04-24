@@ -1,6 +1,8 @@
 
 var runnerButton = document.getElementById("popupRunner");
 var closeButton = document.getElementById("popupCloser");
+var itemArray = ["","Chicken", "Yellow Onions", "Bell Pepper", "Fajita Seasoning", "Oil", "Sour Cream", "Salsa", "Lime", "Whole Wheat Tortillas"];
+let selector = document.getElementById("add-ingredients-select");
 
 function popupRunner()
 {
@@ -17,9 +19,15 @@ function popupCloser()
 
 function check()
 {    
-    console.log("Working!");
-    var selector = document.getElementById("add-ingredients-select");
     console.log(selector.value);
+    console.log(selector.length);
 }
-var ingredientSelector = document.getElementById("add-ingredients-select");
-console.log(ingredientSelector.name);
+
+function updateText()
+{
+    if (selector == 1)
+    {
+        console.log("Chicken Selected");
+    }
+}
+
