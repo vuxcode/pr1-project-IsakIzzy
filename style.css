@@ -78,8 +78,26 @@ a:active
 .recipe-description
 {
     font-style: italic;
-    font-size: 12px;
+    font-size: 16px;
+    display: flex;
 }
+.steps-images
+{
+    align-items: center;
+}
+.preview-recipe-image
+{
+    width: 33%;
+    height: 33%;
+    border-radius: 5px;
+}
+.step-image
+{
+width: 20%;    
+height: 20%;
+border-radius: 100%;
+}
+
 .recipe-content {
     list-style-type: numbers;
     list-style-position: inside;
