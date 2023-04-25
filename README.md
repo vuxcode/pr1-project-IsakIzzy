@@ -70,6 +70,14 @@ Salt 1 package. (It makes no sense to measure this. Since this is a "basic ingre
 
 Styled the buttons. Will try to make the background get darker for a new window on the same site, like some websites do with logins. on the same site for the user to add items.
 
+I am trying to make the options for ingredients change the text. I found out how to do it by simply typing the function into the console. I even got it to change the text based on which ingredient was selected. But Im trying to figure out how to do it without the console. 
+
+Putting the onclick in the select element worked after multiple attempts at stuff.. Nice.
+
+Now everything works. Now I just need to figure how to make them appear at the right places and also to store the choice. 
+
+Except, if i click something and then return to blank. After that the selector wont appear again.
+
 
 # Project Summary
 

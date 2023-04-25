@@ -16,7 +16,7 @@
                 <div class="popup-content">
                     <a onclick="popupCloser()" class="close-window">Close Window</a>
                     <h1>Select Ingredient to add:</h1>
-                    <select name="add-ingredients" id="add-ingredients-select">
+                    <select name="add-ingredients" id="add-ingredients-select" onclick="updateText()">
                         <Option value=""></Option>
                         <option value="Chicken">Chicken</option>
                         <option value="Yellow Onions">Yellow Onions</option>
@@ -27,6 +27,10 @@
                         <option value="Salsa">Salsa</option>
                         <option value="Lime">Lime</option>
                         <option value="Whole Wheat Tortillas">Whole Wheat Tortillas</option> </select>
+                        <p id="grams"></p>
+                        <input type="number" id="amount-selector" class="amount-selector" min="0" max="9999"/>
+                        <p id="pieces"></p>
+                        <p id="empty"></p>
                         <button class="button" style=>Add to inventory</button>
                 </div>
             </div>
