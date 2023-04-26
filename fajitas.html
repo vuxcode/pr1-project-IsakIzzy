@@ -4,12 +4,38 @@
     <head>
         <title>Easy, Healthy and Tasty Recipies (Working Title). Gör det lite enklare att hålla reda på köket.</title>
         <link rel="stylesheet" href="style.css">
+        <!-- Link to javascript cant be here. Must be moved to the button as in the index file.-->
+
     </head>
     <body>
-        <div class="header">
-            <h1>Easy, Tasty and Healthy Recipies</h1>
-        </div>
-        <main>
+            <div class="header">
+                <h1>Easy, Tasty and Healthy Recipies</h1>
+            </div>
+            <main>
+                <!--This is just for when user pushes a button. Im not sure if I should place this on top. But we'll see.. I will test to put it at the very top of the main, and then the closing tag will be at the end of main to wrap the popup over the whole page... ok that didnt work. It actually just worked by adding it here. The bottom looses the dark background though for some reason. That I will look into later.-->
+            <div id= "popup" class="popup"> 
+                <div class="popup-content">
+                    <a onclick="popupCloser()" class="close-window">Close Window</a>
+                    <h1>Select Ingredient to add:</h1>
+                    <select name="add-ingredients" id="add-ingredients-select" onclick="updateText()">
+                        <Option value=""></Option>
+                        <option value="Chicken">Chicken</option>
+                        <option value="Yellow Onions">Yellow Onions</option>
+                        <option value="Bell Pepper">Bell Pepper</option>
+                        <option value="Fajita Seasoning">Fajita Seasoning</option>
+                        <option value="Oil">Oil</option>
+                        <option value="Sour Cream">Sour Cream</option>
+                        <option value="Salsa">Salsa</option>
+                        <option value="Lime">Lime</option>
+                        <option value="Whole Wheat Tortillas">Whole Wheat Tortillas</option> </select>
+                        <p id="grams"></p>
+                        <input type="number" id="amount-selector" class="amount-selector" min="0" max="9999"/>
+                        <p id="pieces"></p>
+                        <p id="empty"></p>
+                        <button class="button" style=>Add to inventory</button>
+                </div>
+            </div>
+
             <div class="left-section">
                 <div class="recipie-list">
                     <p>Recipies List</p>
@@ -84,5 +110,6 @@
             <a href="/Contacts-page">Contacts</p>
 
         </div>
+         <script src="javascript.js"></script>
     </body>
 </html>
