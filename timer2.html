@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <div>
+            <h1>Timer</h1>
+        </div>
+        <div>
+            <div>
+            <input id="userInputMinutes" type="number" min="0" max="59">
+            <input id="userInputSeconds" type="number" min="0" max="59">            
+        </div>
+        <div style="inline-block">
+            <button onclick="startTimer()">Start</button>
+            <button>Stop/Pause</button>
+        </div>
+
+        </div>
+
+    </body>
+</html>
+
+<script>
+        // Calculate what the number is for the computer to count in milliseconds, even though the user put in minutes and seconds
+    var MinutesCalculation = ((userInputMinutes * 60)*1000);
+    var SecondsCalculation = (userInputSeconds * 1000); 
+    var countdownNumber = MinutesCalculation + SecondsCalculation;
+    var timer = setTimeout(startTimer, 1000);
+
+// Made a new file, because the old file wouldn't work. 
+function startTimer()
+{    console.log ("The countdown number is" + countdownNumber);
+    // Display the number first
+    console.log(timer);
+    // Update the number
+    number--;
+    // Update the timer to run the function one more time
+    timer = setTimeout(startTimer, 1000);
+
+}
+
+</script>
