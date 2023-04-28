@@ -78,6 +78,7 @@ Now everything works. Now I just need to figure how to make them appear at the r
 
 Except, if i click something and then return to blank. After that the selector wont appear again.
 
+Added the ingredient types as an updateable variable to item selection popup. 
 
 # Project Summary
 

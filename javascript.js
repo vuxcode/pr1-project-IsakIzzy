@@ -4,6 +4,8 @@ var closeButton = document.getElementById("popupCloser");
 var itemArray = ["","Chicken", "Yellow Onions", "Bell Pepper", "Fajita Seasoning", "Oil", "Sour Cream", "Salsa", "Lime", "Whole Wheat Tortillas"];
 var selector = document.getElementById("add-ingredients-select");
 var amountSelector = document.getElementById("amountSelector");
+var ingredientType= "";
+
 
 function popupRunner()
 {
@@ -32,31 +34,39 @@ function updateText()
     {
         document.getElementById('amountSelector').style.visibility="hidden";    
         document.getElementById("ingredient-type-text").innerHTML= "";
+        // In order to get the ingredient type added to the inventory aswell, I decided to create a variable with the type, and let each else if statement be able to update that value before the information gets added to the inventory. It will be initialized by empty and created at the top. 
+        ingredientType= "";
+        
     }
     else if (selector.value == "Chicken")
     {        
         document.getElementById('amountSelector').style.visibility="visible";    
         document.getElementById("ingredient-type-text").innerHTML= "grams";
+        ingredientType = "grams";
     }   
     else if (selector.value == "Yellow Onions"|| selector.value ==  "Bell Pepper"|| selector.value == "Lime"|| selector.value == "Whole Wheat Tortillas")
     {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= "pieces";
+        ingredientType = "pieces";
     }
     else if (selector.value == "Sour Cream")
     {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= "decilitres";
+        ingredientType = "decilitres";
     }
     else if (selector.value == "Fajita Seasoning" || selector.value == "Salsa")
         {
             document.getElementById('amountSelector').style.visibility="visible"; 
             document.getElementById("ingredient-type-text").innerHTML= "packages";
+            ingredientType = "packages";
         }
         else if (selector.value == "Oil")
         {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= ".";
+        ingredientType = "";
     }
 
 
@@ -71,7 +81,7 @@ var node = document.createElement("li");
 
 // Create a text node
 
-var textnode = document.createTextNode(selector.value + " " + amountSelector.value);
+var textnode = document.createTextNode(selector.value + " " + amountSelector.value + " " + ingredientType);
 
 node.appendChild(textnode);
 document.getElementById("storageIngredientsList").appendChild(node);

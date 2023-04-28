@@ -14,6 +14,8 @@
 2023-4-19: 08:00 Got the button function working 1 hour
 2023-4-24: Added a new recipe and images. 1 hour. 
 For example: 
+2023-4-27: 13:00 Javascript, about 2 hours. 
+2023-4-28: 09:00 Added more function for selections 1 hour. 
 
 - 2022-10-24 18:00 Worked for 1 hour.
   - *List the things you have done.*
