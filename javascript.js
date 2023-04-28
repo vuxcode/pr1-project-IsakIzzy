@@ -1,6 +1,7 @@
 
 var runnerButton = document.getElementById("popupRunner");
 var closeButton = document.getElementById("popupCloser");
+// The item array is currently not used. Maybe I should keep all the ingredients as a comment instead.
 var itemArray = ["","Chicken", "Yellow Onions", "Bell Pepper", "Fajita Seasoning", "Oil", "Sour Cream", "Salsa", "Lime", "Whole Wheat Tortillas"];
 var selector = document.getElementById("add-ingredients-select");
 var amountSelector = document.getElementById("amountSelector");
@@ -76,20 +77,25 @@ function updateText()
 
  function addIngredientsButton()
 {
-    // Create a list node.
+    // Create a list node and a button.
 var node = document.createElement("li");
+var deleteItemButton = document.createElement("button");
 
 // Create a text node
 
 var textnode = document.createTextNode(selector.value + " " + amountSelector.value + " " + ingredientType);
+deleteItemButton.innerHTML = "Remove";
 
 node.appendChild(textnode);
 document.getElementById("storageIngredientsList").appendChild(node);
     console.log ("You are trying to add " + selector.value + amountSelector.value + " to the inventory");
+node.appendChild(deleteItemButton)
     // Close down the popup
     popupCloser();
 
 
 }
+
+
 
 
