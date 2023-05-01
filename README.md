@@ -90,6 +90,10 @@ Found a way to fix this bug. The dots arent there, but I think thats okay. I cha
 I was afraid that removing the item this way would remove all the items listed. But fortunatly it just removes the same item as was created to the list, which is what I wanted.
 
 Margin on the button doesnt seem to work for some reason. It is a bit to close to the text now..
+
+optgroup was something that will be very useful. It will make it much easier for the user to navigate to get the right item. I added it to the options.
+
+Now when theres a bit more progress to this, I will put all the information on all the recipe pages aswell
 # Project Summary
 
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 

@@ -41,13 +41,13 @@ function updateText()
         ingredientType= "";
         
     }
-    else if (selector.value == "Chicken")
+    else if (selector.value == "Chicken" || selector.value == "Mayonnaise" || selector.value == "Lettuce" || selector.value == "Pickles" || selector.value == "Capers" || selector.value == "Dried Parsley")
     {        
         document.getElementById('amountSelector').style.visibility="visible";    
         document.getElementById("ingredient-type-text").innerHTML= "grams";
         ingredientType = "grams";
     }   
-    else if (selector.value == "Yellow Onions"|| selector.value ==  "Bell Pepper"|| selector.value == "Lime"|| selector.value == "Whole Wheat Tortillas")
+    else if (selector.value == "Yellow Onions"|| selector.value ==  "Bell Pepper"|| selector.value == "Lime"|| selector.value == "Whole Wheat Tortillas" || selector.value == "Fish Sticks" || selector.value == "Lemon" || selector.value == "Whole Wheat Hamburger Buns" || selector.value == "Hamburger Cheese")
     {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= "pieces";
@@ -65,7 +65,7 @@ function updateText()
             document.getElementById("ingredient-type-text").innerHTML= "packages";
             ingredientType = "packages";
         }
-        else if (selector.value == "Oil")
+        else if (selector.value == "Oil" || selector.value == "Worcestershire Sauce" || selector.value == "Sugar")
         {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= ".";
