@@ -83,6 +83,13 @@ Added the ingredient types as an updateable variable to item selection popup.
 5/1-2023
 
 I added a button for removing items from the list. I am going to try to make it work the way I want it. I might want to have the user be able to edit already added items. Also I dont want the user to be able to add items without a valid number, but since I have some items without any numbers, like oil for example, I think this might not be worth prioritizing for now. It would be convenient for the user, but it is more important that the user just can remove items. I have found a way to add a CSS class to the items Edit / Remove button upon creating it. 
+
+When removing the button and text, the list dot is still there. Need to figure out how to remove that.
+
+Found a way to fix this bug. The dots arent there, but I think thats okay. I changed the list-style-type to none in the CSS.
+I was afraid that removing the item this way would remove all the items listed. But fortunatly it just removes the same item as was created to the list, which is what I wanted.
+
+Margin on the button doesnt seem to work for some reason. It is a bit to close to the text now..
 # Project Summary
 
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 

@@ -61,6 +61,7 @@ a:active
 {
     border: solid;
     border-width: thin;
+    list-style-type: none;
 }
 .amount-selector
 {
@@ -145,7 +146,8 @@ border-radius: 100%;
         font-weight: bolder;
         box-shadow: 1px 2px 1px 1px;
     }
-    .button:active {
+    .button:active
+    {
         cursor: pointer;
         background-color: limegreen;
         border-radius: 5%;
@@ -155,7 +157,30 @@ border-radius: 100%;
         font-weight: bolder;
         box-shadow: 0px 0px 0px 0px;
     }
-
+.delete-item-button
+{
+    background-color: rgb(237, 66, 66);
+    color: white;
+    margin-left: 2px;
+    font-weight: bolder;
+    box-shadow: 1px 2px 1px 1px;
+}
+.delete-item-button:hover
+{
+    cursor: pointer;
+    background-color: rgb(143, 14, 14);
+    margin-left: 2px;
+    font-weight: bolder;
+    box-shadow: 1px 2px 1px 1px;
+}
+.delete-item-button:active
+{
+    cursor: pointer;
+    background-color: rgb(143, 14, 14);
+    margin-left: 2px;
+    font-weight: bolder;
+    box-shadow: 0px 0px 0px 0px;
+}
 
 .footer
 {

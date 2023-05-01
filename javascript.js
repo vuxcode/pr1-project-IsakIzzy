@@ -6,6 +6,8 @@ var itemArray = ["","Chicken", "Yellow Onions", "Bell Pepper", "Fajita Seasoning
 var selector = document.getElementById("add-ingredients-select");
 var amountSelector = document.getElementById("amountSelector");
 var ingredientType= "";
+// ADD A DELETE BUTTON
+// var deleteItemButton = document.getElementById("deleteItemButton");
 
 
 function popupRunner()
@@ -80,7 +82,8 @@ function updateText()
     // Create a list node and a button.
 var node = document.createElement("li");
 var deleteItemButton = document.createElement("button");
-
+// TRYING TO CREATE A ID FOR THE NEWLY CREATED BUTTON
+// deleteItemButton.setAttribute("onclick") = "deleteItemButton"
 // Create a text node
 
 var textnode = document.createTextNode(selector.value + " " + amountSelector.value + " " + ingredientType);
@@ -88,14 +91,26 @@ deleteItemButton.innerHTML = "Remove";
 
 node.appendChild(textnode);
 document.getElementById("storageIngredientsList").appendChild(node);
-    console.log ("You are trying to add " + selector.value + amountSelector.value + " to the inventory");
-node.appendChild(deleteItemButton)
+deleteItemButton.classList.add("delete-item-button");
+deleteItemButton.addEventListener("click", function()
+{
+    node.removeChild(textnode);
+    deleteItemButton.remove();
+});
+node.appendChild(deleteItemButton);
+deleteItemButton.classList.add("delete-item-button");
     // Close down the popup
     popupCloser();
 
 
 }
 
+// AS OF NOW, THIS DOES NOT WORK
+/*function deleteItemsButton()
+{
+    console.log("Delete item button clicked");
+}
+*/
 
 
 
