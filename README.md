@@ -80,6 +80,9 @@ Except, if i click something and then return to blank. After that the selector w
 
 Added the ingredient types as an updateable variable to item selection popup. 
 
+5/1-2023
+
+I added a button for removing items from the list. I am going to try to make it work the way I want it. I might want to have the user be able to edit already added items. Also I dont want the user to be able to add items without a valid number, but since I have some items without any numbers, like oil for example, I think this might not be worth prioritizing for now. It would be convenient for the user, but it is more important that the user just can remove items. I have found a way to add a CSS class to the items Edit / Remove button upon creating it. 
 # Project Summary
 
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 
