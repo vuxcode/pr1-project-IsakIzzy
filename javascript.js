@@ -1,10 +1,13 @@
 
 var runnerButton = document.getElementById("popupRunner");
 var closeButton = document.getElementById("popupCloser");
+// The item array is currently not used. Maybe I should keep all the ingredients as a comment instead.
 var itemArray = ["","Chicken", "Yellow Onions", "Bell Pepper", "Fajita Seasoning", "Oil", "Sour Cream", "Salsa", "Lime", "Whole Wheat Tortillas"];
 var selector = document.getElementById("add-ingredients-select");
 var amountSelector = document.getElementById("amountSelector");
 var ingredientType= "";
+// ADD A DELETE BUTTON
+// var deleteItemButton = document.getElementById("deleteItemButton");
 
 
 function popupRunner()
@@ -38,13 +41,13 @@ function updateText()
         ingredientType= "";
         
     }
-    else if (selector.value == "Chicken")
+    else if (selector.value == "Chicken" || selector.value == "Mayonnaise" || selector.value == "Lettuce" || selector.value == "Pickles" || selector.value == "Capers" || selector.value == "Dried Parsley")
     {        
         document.getElementById('amountSelector').style.visibility="visible";    
         document.getElementById("ingredient-type-text").innerHTML= "grams";
         ingredientType = "grams";
     }   
-    else if (selector.value == "Yellow Onions"|| selector.value ==  "Bell Pepper"|| selector.value == "Lime"|| selector.value == "Whole Wheat Tortillas")
+    else if (selector.value == "Yellow Onions"|| selector.value ==  "Bell Pepper"|| selector.value == "Lime"|| selector.value == "Whole Wheat Tortillas" || selector.value == "Fish Sticks" || selector.value == "Lemon" || selector.value == "Whole Wheat Hamburger Buns" || selector.value == "Hamburger Cheese")
     {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= "pieces";
@@ -62,7 +65,7 @@ function updateText()
             document.getElementById("ingredient-type-text").innerHTML= "packages";
             ingredientType = "packages";
         }
-        else if (selector.value == "Oil")
+        else if (selector.value == "Oil" || selector.value == "Worcestershire Sauce" || selector.value == "Sugar")
         {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= ".";
@@ -76,21 +79,38 @@ function updateText()
 
  function addIngredientsButton()
 {
-
-    // Create a list node.
+    // Create a list node and a button.
 var node = document.createElement("li");
-
+var deleteItemButton = document.createElement("button");
+// TRYING TO CREATE A ID FOR THE NEWLY CREATED BUTTON
+// deleteItemButton.setAttribute("onclick") = "deleteItemButton"
 // Create a text node
 
 var textnode = document.createTextNode(selector.value + " " + amountSelector.value + " " + ingredientType);
+deleteItemButton.innerHTML = "Remove";
 
 node.appendChild(textnode);
 document.getElementById("storageIngredientsList").appendChild(node);
-    console.log ("You are trying to add " + selector.value + amountSelector.value + " to the inventory");
+deleteItemButton.classList.add("delete-item-button");
+deleteItemButton.addEventListener("click", function()
+{
+    node.removeChild(textnode);
+    deleteItemButton.remove();
+});
+node.appendChild(deleteItemButton);
+deleteItemButton.classList.add("delete-item-button");
     // Close down the popup
     popupCloser();
 
 
 }
+
+// AS OF NOW, THIS DOES NOT WORK
+/*function deleteItemsButton()
+{
+    console.log("Delete item button clicked");
+}
+*/
+
 
 
