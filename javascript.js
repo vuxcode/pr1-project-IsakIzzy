@@ -76,6 +76,7 @@ function updateText()
 
  function addIngredientsButton()
 {
+
     // Create a list node.
 var node = document.createElement("li");
 

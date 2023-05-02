@@ -1,25 +1,87 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+           * 
+           {
+            background-color: ghostwhite;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            
+        } 
+           h1
+           {
+           }
+           p 
+           {
+                display: inline;
+                
+           }
+           .main-section
+           {
+            justify-content: center;
+           }
+           .timeType
+           {
+            margin-left: 5px;
+            margin-right: 5px;
+           }
+           input
+           {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 1px;
+            padding-right: 1px;
+            font-size: 18px;
+            border-radius: 5px;
+           }
+           button
+           {
+                margin-top: 15px;
+                margin-left: 10px;
+                background-color: rgb(209, 216, 176);
+                box-shadow: 0.5px 1px 0.5px 0.5px;
+           }
+           button:hover
+           {
+            background-color: rgb(126, 131, 104);
+            cursor: pointer;
+            box-shadow: 1px 2px 1px 1px;
+           }
+           button:active
+           {
+            background-color: rgb(137, 139, 126);
+            cursor: pointer;
+            box-shadow: 0px 0px 0px 0px;
+           }
+        </style>
+    </head>
     <body>
-        <div>
+        <div class="title">
             <h1>Timer</h1>
         </div>
+            <div class="main-section">
+                <p class="timeType">Minutes</p>
+                <p class="timeType">Seconds</p>
+                <div id="timer-section">
+                <input id="userInputMinutes" type="number" class="timeSelection" min="0" max="59" placeholder="5">
+                <input id="userInputSeconds" type="number" class="timeSelection" min="0" max="59"placeholder="0">            
+                </div>
+            </div>
         <div>
-            <div>
-            <input id="userInputMinutes" type="number" min="0" max="59">
-            <input id="userInputSeconds" type="number" min="0" max="59">            
-        </div>
-        <div style="inline-block">
             <button onclick="startTimer()">Start</button>
-            <button>Stop/Pause</button>
+            <button onclick="pauseTimer()">Stop/Pause</button>
+            <button onclick="resetTimer()">Reset</button>
         </div>
 
-        </div>
 
     </body>
 </html>
 
 <script>
+    // Variables for the inputs and buttons
+    var minutes = document.getElementById("userInputMinutes")
+    var seconds = document.getElementById("userInputSeconds")
+
         // Calculate what the number is for the computer to count in milliseconds, even though the user put in minutes and seconds
     var MinutesCalculation = ((userInputMinutes * 60)*1000);
     var SecondsCalculation = (userInputSeconds * 1000); 
@@ -29,13 +91,21 @@
 // Made a new file, because the old file wouldn't work. 
 function startTimer()
 {    console.log ("The countdown number is" + countdownNumber);
+    console.log("Working?");
     // Display the number first
     console.log(timer);
     // Update the number
     number--;
     // Update the timer to run the function one more time
     timer = setTimeout(startTimer, 1000);
-
 }
+function pauseTimer()
+// Pause the timer at where the startTimer is
+{
+       clearInterval(startTimer); 
+}
+
+// There is something missing. Also I dont know how to output the time to the input that should update each second...
+
 
 </script>
