@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <style>
+           * 
+           {
+            background-color: ghostwhite;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            
+        } 
+           h1
+           {
+           }
+           p 
+           {
+                display: inline;
+                
+           }
+           .main-section
+           {
+            justify-content: center;
+           }
+           .timeType
+           {
+            margin-left: 5px;
+            margin-right: 5px;
+           }
+           input
+           {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 1px;
+            padding-right: 1px;
+            font-size: 18px;
+            border-radius: 5px;
+           }
+           button
+           {
+                margin-top: 15px;
+                margin-left: 10px;
+                background-color: rgb(209, 216, 176);
+                box-shadow: 0.5px 1px 0.5px 0.5px;
+           }
+           button:hover
+           {
+            background-color: rgb(126, 131, 104);
+            cursor: pointer;
+            box-shadow: 1px 2px 1px 1px;
+           }
+           button:active
+           {
+            background-color: rgb(137, 139, 126);
+            cursor: pointer;
+            box-shadow: 0px 0px 0px 0px;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1>Timer</h1>
+        </div>
+            <div class="main-section">
+                <p class="timeType">Minutes</p>
+                <p class="timeType">Seconds</p>
+                <div id="timer-section">
+                <input id="userInputMinutes" type="number" class="timeSelection" min="0" max="59" value="5" oninput="update()">
+                <input id="userInputSeconds" type="number" class="timeSelection" min="0" max="59" value="0" oninput="update()">            
+                </div>
+            </div>
+        <div>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Stop/Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+
+
+    </body>
+</html>
+
+<script>
+    // Variables for the inputs and buttons.
+    var inputElementMinutes = document.getElementById("userInputMinutes");
+    var inputElementSeconds = document.getElementById("userInputSeconds");
+    var inputMinutes = inputElementMinutes.value;
+    var inputSeconds = inputElementSeconds.value;
+
+    // Calculate what the number is for the computer to count in milliseconds, even though the user put in minutes and seconds
+    var minutesCalculation = (inputMinutes * 6);
+    var secondsCalculation = (inputSeconds); 
+    var countdownNumber = minutesCalculation + secondsCalculation;
+    var timer;
+
+    // Function to update the variables after the page has loaded and the user wants to change that number.
+
+        function update()
+        {
+            inputMinutes = inputElementMinutes.value;
+            inputSeconds = inputElementSeconds.value;
+            
+            
+
+            console.log("The minutes are: " + inputMinutes + " and the seconds are: " + inputSeconds);
+
+                // Calculate what the number is for the computer to count in milliseconds, even though the user put in minutes and seconds
+                updateScreen()
+        }
+
+        function updateScreen()
+        {
+             // Calculate what the number is for the computer to count in milliseconds, even though the user put in minutes and seconds
+    minutesCalculation = (inputMinutes);
+    secondsCalculation = (inputSeconds); 
+    countdownNumber = minutesCalculation + secondsCalculation;
+
+        }
+
+
+// Made a new file, because the old file wouldn't work. 
+function startTimer()
+{
+
+    update()
+    //var currentTime = Date();
+    //console.log ("The current time is " + currentTime);
+    //console.log ("The countdown number is" + countdownNumber);
+    // Display the number first
+    // Update the number
+    countdownNumber--;
+    // Update the timer to run the function one more time
+    timer = setInterval(startTimer, 1000);
+
+    inputMinutes = Math.floor(countdownNumber /60);
+    inputSeconds = (countdownNumber % 60); 
+    console.log(inputMinutes + " " +  inputSeconds);
+    inputElementMinutes.value = inputMinutes;
+    inputElementSeconds.value = inputSeconds;
+}
+
+function updateInputBoxes()
+    {
+
+    }
+function pauseTimer()
+// Pause the timer at where the startTimer is
+{
+       clearInterval(timer);
+       console.log("Paused time"); 
+}
+
+// There is something missing. Also I dont know how to output the time to the input that should update each second...
+
+
+</script>
