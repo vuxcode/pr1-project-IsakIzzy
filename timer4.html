@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <style>
+           * 
+           {
+            background-color: ghostwhite;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            
+        } 
+           h1
+           {
+           }
+           p 
+           {
+                display: inline;
+                
+           }
+           .main-section
+           {
+            justify-content: center;
+           }
+           .timeType
+           {
+            margin-left: 5px;
+            margin-right: 5px;
+           }
+           input
+           {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 1px;
+            padding-right: 1px;
+            font-size: 18px;
+            border-radius: 5px;
+           }
+           button
+           {
+                margin-top: 15px;
+                margin-left: 10px;
+                background-color: rgb(209, 216, 176);
+                box-shadow: 0.5px 1px 0.5px 0.5px;
+           }
+           button:hover
+           {
+            background-color: rgb(126, 131, 104);
+            cursor: pointer;
+            box-shadow: 1px 2px 1px 1px;
+           }
+           button:active
+           {
+            background-color: rgb(137, 139, 126);
+            cursor: pointer;
+            box-shadow: 0px 0px 0px 0px;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            <h1>Timer</h1>
+        </div>
+            <div class="main-section">
+                <p class="timeType">Minutes</p>
+                <p class="timeType">Seconds</p>
+                <div id="timer-section">
+                <input id="userInputMinutes" type="number" class="timeSelection" min="0" max="59" value="5" oninput="update()">
+                <input id="userInputSeconds" type="number" class="timeSelection" min="0" max="59" value="0" oninput="update()">            
+                </div>
+            </div>
+        <div>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Stop/Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+
+
+    </body>
+</html>
+
+<script>
+    // Start by creating variables for inputs and buttons.
+    var inputElementMinutes = document.getElementById("userInputMinutes");
+    var inputElementSeconds = document.getElementById("userInputSeconds");
+
+    // These variables makes us able to change the number on screen each second.
+    var inputMinutes = inputElementMinutes.value;
+    var inputSeconds = inputElementSeconds.value;
+
+    // Create a calculation, so that the minutes and seconds together make a full number. Since inputSeconds would be the same number, I don't think I need to create a new variable for it. 
+
+    var minutesCalculation = (inputMinutes * 60); 
+    var countdownNumber = minutesCalculation + inputSeconds;
+    console.log ("If the timer says 5 minutes, then the countdown number should be 300. The countdown number is: " + countdownNumber);
+
+    // For some reason, this resulted in the number being 3000... I guess dividing by 10 would give the right number, but I just don't get why this is... 
+    console.log("The inputMinutes number is " + inputMinutes + ". The inputSeconds is " + inputSeconds + ". Then the countdownnumber should be 300 but for some reason it's 3000. Look here: " + countdownNumber + ". The minutesCalculation is: " + minutesCalculation);
+
+    // Initialize a variable for the timer. 
+    var timer;
+
+
+    // If I get the current time from when the user press Start, I should be able to make it stop after the clock reaches the time that is when the timer should stop. 
+
+    var currentTime = Date.now();
+
+    function startTimer()
+    {
+        update()
+        countdownNumber++;
+    }
+
+</script>
