@@ -89,7 +89,7 @@
     // Create a calculation, so that the minutes and seconds together make a full number. Since inputSeconds would be the same number, I don't think I need to create a new variable for it. 
 
     var minutesCalculation = (inputMinutes * 60); 
-    var countdownNumber = minutesCalculation + inputSeconds;
+    var countdownNumber = (minutesCalculation + inputSeconds / 10);
     console.log ("If the timer says 5 minutes, then the countdown number should be 300. The countdown number is: " + countdownNumber);
 
     // For some reason, this resulted in the number being 3000... I guess dividing by 10 would give the right number, but I just don't get why this is... 
@@ -103,10 +103,49 @@
 
     var currentTime = Date.now();
 
+    // The user inputs should be added to the curent time. Then the timer should be done when the current time + user input would be reached. I can still update the screen by removing number each second. 
+
+    var finishTime = Date.now() + countdownNumber; 
+
+    // If i Console log this now, with the first set time being 5 minutes. The result should be the number Date.now() is + 5000
+    
+    // Lets start creating the functions. I will start with the update function, and then place it in the startTimer function. 
+
+    function update()
+    {
+        // Update the timer each second.
+        timer = setInterval(startTimer, 1000);
+        countdownNumber--;
+        
+        
+        // We need to use Math.floor to always get a full number for the minutes.
+        inputMinutes = Math.floor(countdownNumber /60);
+        inputSeconds = (countdownNumber % 60); 
+        // Lets try this again... 
+        //inputMinutes = Math.floor(countdownNumber / 60);
+        //inputSeconds = (inputMinutes * 60 / inputMinutes);
+
+        console.log("The current time is " + currentTime + " and the time when the countdown is finished is " + finishTime);
+        //update()
+
+        inputElementMinutes.value = inputMinutes;
+        inputElementSeconds.value = inputSeconds;
+        // if (currentTime == finishTime)
+           // {
+             //   alert("time is up");
+            //}
+
+            // I think I know what it could be... If the user clicks on the input boxes. The timer starts for some reason and the numbers cant be changed anymore. How about maybe these input boxes are actually also triggering the startTimer function or update function somehow. That would maybe explain a little why the loop keeps doubling itself every second.
+
+            //Perhapse there should be a separation between updating the time and updating the screen. Or create new variables to change the screen only, that´ll keep the initial number or something like that.
+    }
+
+
+
     function startTimer()
     {
-        update()
-        countdownNumber++;
+        // Place the update function in the startTimer function, so that it starts at the same time as the user pushes the start button.
+        update();
     }
 
 </script>
