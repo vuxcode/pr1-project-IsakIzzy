@@ -168,7 +168,7 @@
         update();
         // By removing the onClick attribute, the button can only be pressed once. I still need to get it clickable again once the user resets the timer.
         // The style also changes so that it is easier for the user to see that the button isn't clickable anymore, and also has the same look while hoovering. 
-        startButton.removeAttribute("onClick");
+        //startButton.setAttribute("disabled","");
         startButton.style.background= "rgb(137, 139, 126)";
         startButton.style.boxShadow="1px 2px 1px 1px";
 
@@ -177,12 +177,22 @@
         document.getElementById("userInputSeconds").readOnly = true;
     }
 
+    function pauseTimer()
+    {
+                // Clear the timer. This only stops the time now. 
+                clearTimeout(timer);
+                //startButton.setAttribute("disabled", "false");
+                // This doesnt work now... The CSS changes back at least. But now hovering does not work...
+                startButton.style.background= "rgb(209, 216, 176)";
+                startButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
+    }
+
     function resetTimer()
     {
         // Clear the timer. This only stops the time now. 
         clearTimeout(timer);
         //Reset the Start Button
-        startButton.getAttribute("onClick");
+        startButton.setAttribute("disabled", "false");
         // This doesnt work now... The CSS changes back at least. But now hovering does not work...
         startButton.style.background= "rgb(209, 216, 176)";
         startButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
@@ -192,6 +202,10 @@
         document.getElementById("userInputMinutes").readOnly = false;
         document.getElementById("userInputSeconds").readOnly = false;
 
+        // Create a starting time, so when the user resets, it should put it back on the time it started on. 
+        // This did not work...
+        startingMinutes = inputElementMinutes.value;
+        startingSeconds = inputElementSeconds.value;
     }
 
 </script>

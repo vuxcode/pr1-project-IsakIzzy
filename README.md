@@ -94,6 +94,8 @@ Margin on the button doesnt seem to work for some reason. It is a bit to close t
 optgroup was something that will be very useful. It will make it much easier for the user to navigate to get the right item. I added it to the options.
 
 Now when theres a bit more progress to this, I will put all the information on all the recipe pages aswell
+
+I post most notes in comments during the programming sections instead. 
 # Project Summary
 
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 

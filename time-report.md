@@ -16,6 +16,10 @@
 For example: 
 2023-4-27: 13:00 Javascript, about 2 hours. 
 2023-4-28: 09:00 Added more function for selections 1 hour. 
+2023-5-1-5: I dont know exactly, forgot to write here but worked about 7 hours or so this week.
+2023-5-8: Worked on the timer for about 3 hours.
+
+
 
 - 2022-10-24 18:00 Worked for 1 hour.
   - *List the things you have done.*
