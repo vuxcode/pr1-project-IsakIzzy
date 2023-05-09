@@ -80,7 +80,9 @@
 <script>
     // Start by creating variables for inputs and buttons.
     var inputElementMinutes = document.getElementById("userInputMinutes");
+    //inputElementMinutes = Number(inputElementMinutes);
     var inputElementSeconds = document.getElementById("userInputSeconds");
+    //inputElementSeconds = Number(inputElementSeconds);
     // Created a variable for the startButton and pauseButton, so that I can disable the onclick function after the button has been pressed once before reseting timer or change CSS.
     var startButton = document.getElementById("startButton");
     var pauseButton = document.getElementById("pauseButton");
@@ -110,6 +112,7 @@
             inputElementSeconds = document.getElementById("userInputSeconds");
             inputMinutes = inputElementMinutes.value;
             inputSeconds = inputElementSeconds.value;
+
             minutesCalculation = (inputMinutes * 60); 
             if (inputSeconds <= 9)
             {
