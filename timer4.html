@@ -69,7 +69,7 @@
             </div>
         <div>
             <button id="startButton" onclick="startTimer()">Start</button>
-            <button onclick="pauseTimer()">Stop/Pause</button>
+            <button id="pauseButton" onclick="pauseTimer()">Stop/Pause</button>
             <button onclick="resetTimer()">Reset</button>
         </div>
 
@@ -81,8 +81,9 @@
     // Start by creating variables for inputs and buttons.
     var inputElementMinutes = document.getElementById("userInputMinutes");
     var inputElementSeconds = document.getElementById("userInputSeconds");
-    // Created a variable for the startButton, so that I can disable the onclick function after the button has been pressed once before reseting timer.
+    // Created a variable for the startButton and pauseButton, so that I can disable the onclick function after the button has been pressed once before reseting timer or change CSS.
     var startButton = document.getElementById("startButton");
+    var pauseButton = document.getElementById("pauseButton");
 
     // These variables makes us able to change the number on screen each second.
     var inputMinutes = inputElementMinutes.value;
@@ -91,12 +92,15 @@
     // Create a starting time, so when the user resets, it should put it back on the time it started on. 
     var startingMinutes = inputMinutes;
     var startingSeconds = startingSeconds;
-
-    // Create a calculation, so that the minutes and seconds together make a full number. Since inputSeconds would be the same number, I don't think I need to create a new variable for it. 
+    // Not sure if I'll use this. I think I have a better way.
+    
+    // Create a calculation, so that the minutes and seconds together make a full number. Since inputSeconds would be the same number as a secondsCalculation, I don't think I need to create a new variable for it. 
 
     var minutesCalculation = (inputMinutes * 60); 
     var countdownNumber = (minutesCalculation + inputSeconds / 10);
     console.log ("If the timer says 5 minutes, then the countdown number should be 300. The countdown number is: " + countdownNumber);
+    // Created this variable to store the initial countdownNumber for when the user clicks reset.
+    var originalCountdownNumber = countdownNumber;
 
     //Make it a function. Works for minutes but not for seconds right now
 
@@ -108,6 +112,7 @@
             inputSeconds = inputElementSeconds.value;
             minutesCalculation = (inputMinutes * 60); 
             countdownNumber = ((minutesCalculation + inputSeconds) / 10);
+            originalCountdownNumber = countdownNumber;
         }
 
     // For some reason, this resulted in the number being 3000... I guess dividing by 10 would give the right number, but I just don't get why this is... 
@@ -115,6 +120,9 @@
 
     // Initialize a variable for the timer. 
     var timer;
+
+    // Clicking on the start multiple times makes the time go faster. So I will let a Boolean control this
+    var timerIsToggledOn = false;
 
 
     // If I get the current time from when the user press Start, I should be able to make it stop after the clock reaches the time that is when the timer should stop. 
@@ -157,14 +165,25 @@
             // I think I know what it could be... If the user clicks on the input boxes. The timer starts for some reason and the numbers cant be changed anymore. How about maybe these input boxes are actually also triggering the startTimer function or update function somehow. That would maybe explain a little why the loop keeps doubling itself every second.
 
             //Perhapse there should be a separation between updating the time and updating the screen. Or create new variables to change the screen only, that´ll keep the initial number or something like that.
+        if (inputElementMinutes.value <= 0 && inputElementSeconds.value <= 0)
+        {
+                alert("Time is up!");
+            resetTimer();
             
+        }
+
     }
 
 
 
     function startTimer()
     {
-        // Place the update function in the startTimer function, so that it starts at the same time as the user pushes the start button.
+        startButton.disabled= true;
+        // I decided to skip this, since it was probably not efficient.
+        //timerIsToggledOn = true;
+        //while (timerIsToggledOn)
+        {
+                    // Place the update function in the startTimer function, so that it starts at the same time as the user pushes the start button.
         update();
         // By removing the onClick attribute, the button can only be pressed once. I still need to get it clickable again once the user resets the timer.
         // The style also changes so that it is easier for the user to see that the button isn't clickable anymore, and also has the same look while hoovering. 
@@ -172,19 +191,37 @@
         startButton.style.background= "rgb(137, 139, 126)";
         startButton.style.boxShadow="1px 2px 1px 1px";
 
+        // If Pause Button has been clicked, it should return to its default CSS State. 
+        pauseButton.style.background="rgb(209, 216, 176)";
+        pauseButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
+
         // I don't want the user to be able to change the numbers after pressing start. To do this, the user should first Reset it. Therefor, I will add readonly, which seems to be what I am looking for in this case.
         document.getElementById("userInputMinutes").readOnly = true;
         document.getElementById("userInputSeconds").readOnly = true;
+        //Change the Toggle to false, so that this value can be used for an if statement to not run anything if clicked again.         
+        //break;
+        console.log(countdownNumber + "    "+ minutesCalculation +"    " +  inputSeconds);
+        }
+
+        
+
     }
 
     function pauseTimer()
     {
-                // Clear the timer. This only stops the time now. 
-                clearTimeout(timer);
-                //startButton.setAttribute("disabled", "false");
-                // This doesnt work now... The CSS changes back at least. But now hovering does not work...
-                startButton.style.background= "rgb(209, 216, 176)";
-                startButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
+
+        // Clear the timer. This only stops the time now. 
+        clearTimeout(timer);
+        //startButton.setAttribute("disabled", "false");
+        // This doesnt work now... The CSS changes back at least. But now hovering does not work...
+        //Ok now it works.. I dont know why actually, maybe I tried to refresh during a loop or something.
+        // Change the CSS so the user knows that the pause button is currently toggled.
+        pauseButton.style.background="rgb(137, 139, 126)";
+        pauseButton.style.boxShadow="1px 2px 1px 1px";
+        // Same for the Start Button, so the user can click it again. 
+        startButton.style.background= "rgb(209, 216, 176)";
+        startButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
+        startButton.disabled= false;
     }
 
     function resetTimer()
@@ -192,8 +229,11 @@
         // Clear the timer. This only stops the time now. 
         clearTimeout(timer);
         //Reset the Start Button
-        startButton.setAttribute("disabled", "false");
+        startButton.disabled= false;
         // This doesnt work now... The CSS changes back at least. But now hovering does not work...
+        pauseButton.style.background="rgb(209, 216, 176)";
+        pauseButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
+
         startButton.style.background= "rgb(209, 216, 176)";
         startButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
 
@@ -204,8 +244,15 @@
 
         // Create a starting time, so when the user resets, it should put it back on the time it started on. 
         // This did not work...
-        startingMinutes = inputElementMinutes.value;
-        startingSeconds = inputElementSeconds.value;
+       // inputElementMinutes.value = startingMinutes;
+       // inputElementSeconds.value = startingSeconds;
+
+        // This didnt work as intended. But I don't think it matters that much for now. I'll just change it to 5 mins as a standard starting time instead. 
+        inputElementMinutes.value = 5;
+        inputElementSeconds.value = 0;
+        //Reset the countdownnumber. Now it jumps back to closest minute, so its not really working. I think it is something with the seconds variable that is the ghost behind all the issues right now! But its finally a somewhat working timer!  
+        countdownNumber = originalCountdownNumber;
+
     }
 
 </script>
