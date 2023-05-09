@@ -111,8 +111,25 @@
             inputMinutes = inputElementMinutes.value;
             inputSeconds = inputElementSeconds.value;
             minutesCalculation = (inputMinutes * 60); 
-            countdownNumber = ((minutesCalculation + inputSeconds) / 10);
-            originalCountdownNumber = countdownNumber;
+            if (inputSeconds <= 9)
+            {
+            countdownNumber = ((minutesCalculation / 10) + inputSeconds);
+            }
+            else
+            {
+            countdownNumber = ((minutesCalculation / 100) + inputSeconds);
+            //originalCountdownNumber = countdownNumber;
+            console.log("The inputSeconds are: " + inputSeconds + " and minutes are " + minutesCalculation + "total " + countdownNumber);
+            }
+
+
+            // Ok... so now I have to divide it by 100 for some reason.. it works so, ok I guess..
+            //But not if it's under 10. So I need to create two different
+            //if (inputSeconds <= 10)
+            //{
+            //inputSeconds = (inputSeconds / 10)    
+            //}
+        
         }
 
     // For some reason, this resulted in the number being 3000... I guess dividing by 10 would give the right number, but I just don't get why this is... 
@@ -248,10 +265,12 @@
        // inputElementSeconds.value = startingSeconds;
 
         // This didnt work as intended. But I don't think it matters that much for now. I'll just change it to 5 mins as a standard starting time instead. 
+        
         inputElementMinutes.value = 5;
         inputElementSeconds.value = 0;
         //Reset the countdownnumber. Now it jumps back to closest minute, so its not really working. I think it is something with the seconds variable that is the ghost behind all the issues right now! But its finally a somewhat working timer!  
-        countdownNumber = originalCountdownNumber;
+        // countdownNumber = originalCountdownNumber;
+        updateNumbers()
 
     }
 
