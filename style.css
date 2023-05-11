@@ -40,6 +40,17 @@ a:active
 {
     color: floralwhite;
 }
+iframe
+{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
 .header
 {
     background-color:ghostwhite;
@@ -117,8 +128,14 @@ border-radius: 100%;
 }
 .timer-section
 {
+    position: relative;
+    width: 100%;
+    padding-top: 28.1%; /* 16:9 Aspect Ratio would be 56.25 percent. (divide 9 by 16= 0-5625) */ 
+    padding-bottom: 28.1%;
     border: solid;
     border-width: thick;
+    height: 0;
+    
 }
 .ingredients-needed-list
 {

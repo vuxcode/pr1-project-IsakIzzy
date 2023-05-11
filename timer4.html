@@ -5,8 +5,7 @@
            {
             background-color: ghostwhite;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: center;
-            
+            text-align: center;           
         } 
            h1
            {
@@ -110,17 +109,22 @@
         {
             inputElementMinutes = document.getElementById("userInputMinutes");
             inputElementSeconds = document.getElementById("userInputSeconds");
-            inputMinutes = inputElementMinutes.value;
-            inputSeconds = inputElementSeconds.value;
+            inputMinutes = Number(inputElementMinutes.value);
+            inputSeconds = Number(inputElementSeconds.value);
+            // This works well. Now even if the user puts say 6 minutes and 90 seconds, the timer will jump directly to 7 minutes and 30 seconds, which fixes the bug of users typing in a number higher then 59. 
 
             minutesCalculation = (inputMinutes * 60); 
             if (inputSeconds <= 9)
             {
-            countdownNumber = ((minutesCalculation / 10) + inputSeconds);
+                // I will comment out the old calculation, since changing it to a number fixes the bug. 
+            //countdownNumber = ((minutesCalculation / 10) + inputSeconds);
+            countdownNumber = ((minutesCalculation) + inputSeconds);
             }
             else
             {
-            countdownNumber = ((minutesCalculation / 100) + inputSeconds);
+            //countdownNumber = ((minutesCalculation / 100) + inputSeconds);
+            countdownNumber = ((minutesCalculation) + inputSeconds);
+
             //originalCountdownNumber = countdownNumber;
             console.log("The inputSeconds are: " + inputSeconds + " and minutes are " + minutesCalculation + "total " + countdownNumber);
             }
@@ -160,8 +164,8 @@
     function update()
     {
         // Update the timer each second.
-        //Changed from setInterval to setTimeout. Now it counts down the way it should.
-        timer = setTimeout(startTimer , 1000);
+        // Changed from setInterval to setTimeout. Now it counts down the way it should.
+        timer = setTimeout(update , 1000);
         countdownNumber--;
         
         
@@ -187,7 +191,7 @@
             //Perhapse there should be a separation between updating the time and updating the screen. Or create new variables to change the screen only, that´ll keep the initial number or something like that.
         if (inputElementMinutes.value <= 0 && inputElementSeconds.value <= 0)
         {
-                alert("Time is up!");
+            alert("Time is up!");
             resetTimer();
             
         }
@@ -238,6 +242,7 @@
         // Change the CSS so the user knows that the pause button is currently toggled.
         pauseButton.style.background="rgb(137, 139, 126)";
         pauseButton.style.boxShadow="1px 2px 1px 1px";
+        // pauseButton.style.hover.active = true;
         // Same for the Start Button, so the user can click it again. 
         startButton.style.background= "rgb(209, 216, 176)";
         startButton.style.boxShadow="0.5px 1px 0.5px 0.5px";
