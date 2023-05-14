@@ -103,6 +103,9 @@
     // Created this variable to store the initial countdownNumber for when the user clicks reset.
     var originalCountdownNumber = countdownNumber;
 
+    // Variable for the sound when the timer is done
+    var alertSound = new Audio("TimerAlert.mp3");
+
     //Make it a function. Works for minutes but not for seconds right now
 
         function updateNumbers()
@@ -190,9 +193,11 @@
 
             //Perhapse there should be a separation between updating the time and updating the screen. Or create new variables to change the screen only, that´ll keep the initial number or something like that.
         if (inputElementMinutes.value <= 0 && inputElementSeconds.value <= 0)
-        {
+        {            
+            alertSound.play();
             alert("Time is up!");
             resetTimer();
+
             
         }
 
