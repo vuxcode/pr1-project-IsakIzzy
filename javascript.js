@@ -9,6 +9,47 @@ var ingredientType= "";
 // ADD A DELETE BUTTON
 // var deleteItemButton = document.getElementById("deleteItemButton");
 
+document.addEventListener("DOMContentLoaded", (loadpage))
+
+function loadpage()
+{
+    console.log ("Page just loaded. The local storage is " + localStorage);
+        /*if (localStorage ==)
+        {
+            console.log("Item doesnt exist in storage")
+        }
+        else 
+        {
+
+            var textnode = document.createTextNode(test); 
+        }*/
+
+
+        var listOfIngredients = document.getElementById("add-ingredients-select");
+        console.log (listOfIngredients);
+
+        for (var i = 0; i < listOfIngredients.length; i++)
+        {
+            var txt =listOfIngredients[i].text;
+            var item = localStorage.getItem(txt);
+            if (item == null)
+                {
+                    console.log("The item " + txt + " does not exist in the local storage");
+                }
+            else 
+                {
+                    console.log("The item " + txt + " exists in the local storage");
+                    var ingredientAdded = (txt + " " +  item);
+                    addIngredientsButton(ingredientAdded, txt);
+
+                    
+                }
+                
+            console.log(txt);
+        }
+
+}
+
 
 function popupRunner()
 {
@@ -77,16 +118,35 @@ function updateText()
 
 }
 
- function addIngredientsButton()
+function createIngredient()
+{
+    var ingredientAdded = (selector.value + " " + amountSelector.value + " " + ingredientType);
+    addIngredientsButton(ingredientAdded, selector.value)
+}
+
+ function addIngredientsButton(ingredientAdded, removeButtonKey)
 {
     // Create a list node and a button.
 var node = document.createElement("li");
 var deleteItemButton = document.createElement("button");
-// TRYING TO CREATE A ID FOR THE NEWLY CREATED BUTTON
+// TRYING TO CREATE AN ID FOR THE NEWLY CREATED BUTTON
 // deleteItemButton.setAttribute("onclick") = "deleteItemButton"
 // Create a text node
+//var ingredientAdded = (selector.value + " " + amountSelector.value + " " + ingredientType)
 
-var textnode = document.createTextNode(selector.value + " " + amountSelector.value + " " + ingredientType);
+    //function savedToStorage 
+    // Since I need to create a new variable for each item, im thinkinig it needs to be an array, othervise it would just overwrite the previous input. 
+    // Create a ingredient array (this should be at top of page though)
+    //const ingredientsInStorageArray = [];
+  
+    // Add the new ingredient to the array.
+    // Let the local Storage save the new ingredient to a local storage array
+    // output the newly added ingredient to the screen as the last number in the array.
+    // Create a deleteItemButton that deletes the item from screen and from the array.
+
+var textnode = document.createTextNode(ingredientAdded);
+console.log(textnode);
+localStorage.setItem(selector.value, amountSelector.value + " " + ingredientType);
 deleteItemButton.innerHTML = "Remove";
 
 node.appendChild(textnode);
@@ -96,6 +156,7 @@ deleteItemButton.addEventListener("click", function()
 {
     node.removeChild(textnode);
     deleteItemButton.remove();
+    localStorage.removeItem(removeButtonKey);
 });
 node.appendChild(deleteItemButton);
 deleteItemButton.classList.add("delete-item-button");

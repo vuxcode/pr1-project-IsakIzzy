@@ -19,7 +19,6 @@
                         <h1>Select Ingredient to add:</h1>
                         <div class="selector-container">
                             <select name="add-ingredients" id="add-ingredients-select" onclick="updateText()">
-                            <Option value=""></Option>
                             <optgroup label="Protein"></optgroup>
                             <option value="Chicken">Chicken</option>
                             <option value="Fish Sticks">Fish Sticks</option>
@@ -48,7 +47,7 @@
                             <input type="number" id="amountSelector" class="amount-selector" min="0" max="9999"/>
                             <p id="ingredient-type-text"></p>
                         </div>
-                            <button onclick="addIngredientsButton()" class="button" style=>Add to inventory</button>
+                            <button onclick="createIngredient()" class="button" style=>Add to inventory</button>
                         </div>
                     </div>
                 </div>
