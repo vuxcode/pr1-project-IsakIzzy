@@ -55,6 +55,12 @@ iframe
 {
     background-color:ghostwhite;
     padding: 10px 0px 10px 0px;
+    justify-content: center;
+}
+.website-logo-image
+{
+    width: auto;
+    height: auto;
 }
 .left-section 
 {
@@ -67,6 +73,7 @@ iframe
     border: solid;
     border-width: thin;
     font-size: 24px;
+    list-style-type: none;
 }
 .ingredients-storage-list
 {
@@ -114,6 +121,7 @@ iframe
 width: 20%;    
 height: 20%;
 border-radius: 100%;
+margin-bottom: 50px;
 }
 
 .recipe-content {

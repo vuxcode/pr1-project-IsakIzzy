@@ -28,24 +28,19 @@ function loadpage()
         var listOfIngredients = document.getElementById("add-ingredients-select");
         console.log (listOfIngredients);
 
-        for (var i = 0; i < listOfIngredients.length; i++)
+        for (var i = 1; i < listOfIngredients.length; i++)
         {
             var txt =listOfIngredients[i].text;
             var item = localStorage.getItem(txt);
-            if (item == null)
+            if (item != null)
                 {
-                    console.log("The item " + txt + " does not exist in the local storage");
+                    var ingredientAdded = (txt + " " +  item);
+                    addIngredientsButton(ingredientAdded, txt);
                 }
             else 
                 {
-                    console.log("The item " + txt + " exists in the local storage");
-                    var ingredientAdded = (txt + " " +  item);
-                    addIngredientsButton(ingredientAdded, txt);
 
-                    
                 }
-                
-            console.log(txt);
         }
 
 }
@@ -165,7 +160,6 @@ deleteItemButton.classList.add("delete-item-button");
 
 
 }
-
 // AS OF NOW, THIS DOES NOT WORK
 /*function deleteItemsButton()
 {
