@@ -1,33 +1,21 @@
 
+// These are variables created here to be used for later.
 var runnerButton = document.getElementById("popupRunner");
 var closeButton = document.getElementById("popupCloser");
-// The item array is currently not used. Maybe I should keep all the ingredients as a comment instead.
-var itemArray = ["","Chicken", "Yellow Onions", "Bell Pepper", "Fajita Seasoning", "Oil", "Sour Cream", "Salsa", "Lime", "Whole Wheat Tortillas"];
 var selector = document.getElementById("add-ingredients-select");
 var amountSelector = document.getElementById("amountSelector");
 var ingredientType= "";
-// ADD A DELETE BUTTON
-// var deleteItemButton = document.getElementById("deleteItemButton");
 
+// This Event Listener is used for everytime the page gets loaded to be able to load all the saved ingredients from before.
 document.addEventListener("DOMContentLoaded", (loadpage))
 
 function loadpage()
 {
-    console.log ("Page just loaded. The local storage is " + localStorage);
-        /*if (localStorage ==)
-        {
-            console.log("Item doesnt exist in storage")
-        }
-        else 
-        {
-
-            var textnode = document.createTextNode(test); 
-        }*/
-
+    //console.log ("Page just loaded. The local storage is " + localStorage);
 
         var listOfIngredients = document.getElementById("add-ingredients-select");
-        console.log (listOfIngredients);
 
+        // This for loop, runs through the whole list of items. If the item exists in the local storage, it should be set to appear on screen every time the user loads the page, until the user removes the item from the local storage.
         for (var i = 1; i < listOfIngredients.length; i++)
         {
             var txt =listOfIngredients[i].text;
@@ -45,7 +33,7 @@ function loadpage()
 
 }
 
-
+// A function that runs when the user clicks on the "Add ingredients button" and another one for when the user closes the "window". It's all basically just a toggle between what the CSS is showing.
 function popupRunner()
 {
  document.getElementById('popup').style.visibility="visible";
@@ -58,7 +46,6 @@ function popupCloser()
  document.getElementById('amountSelector').style.visibility="hidden";  
  console.log("CloseButton clicked");
 }
-//JS for changing text based on selection. 
 
 function check()
 {    
@@ -108,9 +95,6 @@ function updateText()
         ingredientType = "";
     }
 
-
-    //function revealAmountSelector
-
 }
 
 function createIngredient()
@@ -124,23 +108,9 @@ function createIngredient()
     // Create a list node and a button.
 var node = document.createElement("li");
 var deleteItemButton = document.createElement("button");
-// TRYING TO CREATE AN ID FOR THE NEWLY CREATED BUTTON
-// deleteItemButton.setAttribute("onclick") = "deleteItemButton"
-// Create a text node
-//var ingredientAdded = (selector.value + " " + amountSelector.value + " " + ingredientType)
-
-    //function savedToStorage 
-    // Since I need to create a new variable for each item, im thinkinig it needs to be an array, othervise it would just overwrite the previous input. 
-    // Create a ingredient array (this should be at top of page though)
-    //const ingredientsInStorageArray = [];
-  
-    // Add the new ingredient to the array.
-    // Let the local Storage save the new ingredient to a local storage array
-    // output the newly added ingredient to the screen as the last number in the array.
-    // Create a deleteItemButton that deletes the item from screen and from the array.
-
 var textnode = document.createTextNode(ingredientAdded);
 console.log(textnode);
+// Save items to the local storage, where the selector value is the key to what item the user has added, also taking in the amount value and the ingredient type gets set as the keys value. You can see this under the Applications tab on the developers tools in selected web browser. 
 localStorage.setItem(selector.value, amountSelector.value + " " + ingredientType);
 deleteItemButton.innerHTML = "Remove";
 
@@ -160,12 +130,6 @@ deleteItemButton.classList.add("delete-item-button");
 
 
 }
-// AS OF NOW, THIS DOES NOT WORK
-/*function deleteItemsButton()
-{
-    console.log("Delete item button clicked");
-}
-*/
 
 
 
