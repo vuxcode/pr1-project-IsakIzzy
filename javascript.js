@@ -64,19 +64,19 @@ function updateText()
         ingredientType= "";
         
     }
-    else if (selector.value == "Chicken" || selector.value == "Mayonnaise" || selector.value == "Lettuce" || selector.value == "Pickles" || selector.value == "Capers" || selector.value == "Dried Parsley")
+    else if (selector.value == "Chicken" || selector.value == "Mayonnaise" || selector.value == "Lettuce" || selector.value == "Pickles" || selector.value == "Capers" || selector.value == "Dried Parsley" || selector.value == "Salmon" || selector.value == "Spinach"|| selector.value ==  "Parmesan Cheese" || selector.value ==  "Tagilatelle Pasta")
     {        
         document.getElementById('amountSelector').style.visibility="visible";    
         document.getElementById("ingredient-type-text").innerHTML= "grams";
         ingredientType = "grams";
     }   
-    else if (selector.value == "Yellow Onions"|| selector.value ==  "Bell Pepper"|| selector.value == "Lime"|| selector.value == "Whole Wheat Tortillas" || selector.value == "Fish Sticks" || selector.value == "Lemon" || selector.value == "Whole Wheat Hamburger Buns" || selector.value == "Hamburger Cheese")
+    else if (selector.value == "Yellow Onions"|| selector.value ==  "Bell Pepper"|| selector.value == "Lime"|| selector.value == "Whole Wheat Tortillas" || selector.value == "Fish Sticks" || selector.value == "Lemon" || selector.value == "Whole Wheat Hamburger Buns" || selector.value == "Hamburger Cheese" || selector.value ==  "Garlic")
     {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= "pieces";
         ingredientType = "pieces";
     }
-    else if (selector.value == "Sour Cream")
+    else if (selector.value == "Sour Cream" || selector.value =="White Cooking Wine" || selector.value == "Cooking Cream")
     {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= "decilitres";
@@ -88,7 +88,7 @@ function updateText()
             document.getElementById("ingredient-type-text").innerHTML= "packages";
             ingredientType = "packages";
         }
-        else if (selector.value == "Oil" || selector.value == "Worcestershire Sauce" || selector.value == "Sugar")
+        else if (selector.value == "Oil" || selector.value == "Worcestershire Sauce" || selector.value == "Sugar" || selector.value == "Salt")
         {
         document.getElementById('amountSelector').style.visibility="visible"; 
         document.getElementById("ingredient-type-text").innerHTML= ".";
