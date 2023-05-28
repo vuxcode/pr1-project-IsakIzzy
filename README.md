@@ -10,6 +10,10 @@ The final program is not the goal! The aim of the project is to show how you hav
 # Project Notes
 
 > You can use this section of the file to keep notes about your project as you work on it.
+
+I used this at the start. Later in the project I focused on making the notes in the code itself instead. There are mostly HTML and CSS related notes here. 
+
+
 4-08-23
 I think I need to divide the site into three different sections. Left section, middle section and right section. The Left and Right sections should be equally large, the middle section however, should be a bit larger, since it has more text then the other ones. I think the left and right sections needs to be split up into two, vertically for the two different parts on each one. 
 
@@ -17,9 +21,9 @@ Maybe I use too many div classes now. But I like to use it a lot for organizatio
 
 4-09-23
 I need to add some content to divs for it to appear..
-Now the divs are devided on different lines. Gotta get them to be next to each other. 
+Now the divs are divided on different lines. Gotta get them to be next to each other. 
 I think I have all the divs I need now. They just aren't lined up the way I want them to yet. 
-Is Github gonna be able to save Swedish characters, or do I need to add something for it to work?
+Is Github gonna be able to save Swedish characters, or do I need to add something for it to work? (I ended up making the website in English anyway)
 I figured that display:inline in the CSS for the three different main sections is what I was looking for.
 I thought at least. It didn't work. Put it in the mains CSS. If I put it in the CSS for all the three main sections, it just removed all the background color..
 Changing to inline-block kinda worked... but they aren't looking exactly like I wanted. They got some padding for some reason, which maybe makes sense so that text in different sections don't collide, but the middle section is a bit lower then the other two. 
@@ -29,8 +33,9 @@ Setting it to 49 percent worked.... must be because there are a small space betw
 
 Margin 0 px on body in CSS?? 
 
-There is something I still missing. When I make the window smaller, the right section places itself under the left section... this is't something I want. I want them to always be lined at the sides. Perhapse there could be that smaller sizes makes the user need to scroll to the sides to see the full page, rather then the sections moving positions. (On phones there should be a different design though, but that's not something I will prioritize for now.)
+There is something I am still missing. When I make the window smaller, the right section places itself under the left section... this is't something I want. I want them to always be lined at the sides. Perhapse there could be that smaller sizes makes the user need to scroll to the sides to see the full page, rather then the sections moving positions. (On phones there should be a different design though, but that's not something I will prioritize for now.)
 Tried margin auto. Didn't work.
+
 4-10-23
 Today I will try to get the functions for a timer down. 
 I will try to look a bit at how a countdown in JS should work. Before that, I decided to calculate the user input into seconds. The user can still enter minutes, but the minutes will be calculated into seconds with simple math. Im not sure if this is what I need yet.
@@ -39,7 +44,7 @@ Found a method called setTimeout() that I think might be what Im looking for.
 4-15-23:
 
 Since the project is getting a bit larger now, and Im planing to expand with more pages, I decided to move all the CSS to a separate css file called style. Instead, I will reference to this file in the head section on each page.
-Yesterday, I made Fajitas. I took a picture and the recipe will be the first recipe on the page. 
+Yesterday I made Fajitas. I took a picture and the recipe will be the first recipe on the page. 
 I wanted to take pictures of all the steps. But the images didn't live up to my expectations. Perhapse I'll try to do that in another recipe or some other time. 
 
 I think I know what I need to make the browse function work. 
@@ -95,11 +100,26 @@ optgroup was something that will be very useful. It will make it much easier for
 
 Now when theres a bit more progress to this, I will put all the information on all the recipe pages aswell
 
-I post most notes in comments during the programming sections instead. 
+I post more notes in comments during the programming sections instead. 
+
 # Project Summary
 
 > Before the final submission date you should include a "PROJECT SUMMARY" in this section here. 
 
+The project is a website that helps the user to easily be able to organize their storage, read recipies and use a timer function. 
+Im really happy with the result of this website. It included most of the functions and design that I initially wanted to include. I feel like I´ve learned a lot on the way. Im mostly happy with the timer. The timer was also something I really wanted to create, because I usually put the timer on in a webbrowser for cooking or other tasks. I think that most other timers online have very annoying and loud sounds for when the time is up, and are not as easy to use as mine. So I made an (in my opinion) much better sound effect for when the time is up, and I made the timer very easy to control. Therefor I think my timer is much more useful for me than other ones. 
+That is because it seemed like a very hard challenge from the beginning. But I kept trying different things, since I knew that all the things that we've learnt on this course would be efficient enough to create this timer. And eventually it worked. Im also really happy that I know exactly why this, and other features on the website works the way it does. Like, what all the different CSS terms mean, and why the codes functions are doing what they are doing to the website.
+
+Im also quite happy with the design of the website. It is very "simple" for the user, which makes it very easy to navigate through and know exactly how to use, and that the user can add items that will be saved to the local storage, even when the browser window gets closed down. 
+
+If I had more time I would like to expand the recipie and ingredient lists ofcourse. I would've also liked to add a feature to the ingredients needed list to be able to see which ingredients are in storage or not. Also the website could have a bit better design and much more images / better logo. The reason for me to make this site was because I wanted a website that can help me organize my groceries and store all my recipies, and to create a timer that worked and sounded the way I wanted, instead of using other ones online.
+
+I forgot about the time report page after a while and didn't update it as frequent as I should have, but I would say that I stayed around the timebudget.
+
 # User Guide
 
 > Write a clear user guide for how someone should use your program.
+
+The user can select different recipies, and add items that exist in the recipies to their inventory.  
+There´s also a timer that the user can interact with, which is a very helpful addition to the recipies, instead of using an external timer. 
+The start page also has instructions for the user.
