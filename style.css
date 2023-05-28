@@ -22,6 +22,12 @@ h1
 li 
 {
     text-align: center;
+    list-style-type: none;
+}
+ol
+{
+    text-align: center;
+    list-style-type: none;
 }
 a
 {
