@@ -8,7 +8,7 @@
     </head>
         <body>
             <div class="header">
-                <a href="index.html"><img class="website-logo-image" src="images\Easytastyhealthylogo.png" alt="Easy, Tasty and Healthy Recipies Logo"></a>
+                <a href="index.html"><img class="website-logo-image" src="images/Easytastyhealthylogo.png" alt="Easy, Tasty and Healthy Recipies Logo"></a>
             </div>
             <main>
                 <!--This text until next comment should be the same on all recipe pages.-->
@@ -19,7 +19,7 @@
                     <div class="selector-container">
                         <select name="add-ingredients" id="add-ingredients-select" onclick="updateText()">
                         <optgroup label="Protein"></optgroup>
-                        <option value=""></option>
+                        <option value="">&nbsp;</option>
                         <option value="Chicken">Chicken</option>
                         <option value="Fish Sticks">Fish Sticks</option>
                         <option value="Salmon">Salmon</option>
@@ -53,21 +53,20 @@
                         <option value="Parmesan Cheese">Parmesan Cheese</option>
 
                     </select>
-                        <input type="number" id="amountSelector" class="amount-selector" min="0" max="9999"/>
+                        <input type="number" id="amountSelector" class="amount-selector" min="0" max="9999">
                         <p id="ingredient-type-text"></p>
                     </div>
-                        <button onclick="createIngredient()" class="button" style=>Add to inventory</button>
+                        <button onclick="createIngredient()" class="button">Add to inventory</button>
                     </div>
                 </div>
-            </div>
 
                  
             <div class="left-section">
                 <div class="recipie-list"><p>Recipies List</p>
                     <!--I have a Home link here for now. Later, it will be the site logo instead-->               
-                    <li><a href="fajitas.html">Fajitas</a></li>
-                    <li><a href="fishburger.html">Fishstick Burger</a></li>
-                    <li><a href="salmonpasta.html">Salmon Pasta</a></li>
+                    <ol><a href="fajitas.html">Fajitas</a></ol>
+                    <ol><a href="fishburger.html">Fishstick Burger</a></ol>
+                    <ol><a href="salmonpasta.html">Salmon Pasta</a></ol>
                     <br>
                 </div>
                 <div class="ingredients-storage-list">
@@ -134,8 +133,6 @@
     </div>
     </main>
 <div class="footer">
-<a href="/About-page">About page</a>
-<a href="/Contacts-page">Contacts</p>
 
 </div>
 <script src="javascript.js"></script>
