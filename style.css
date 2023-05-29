@@ -155,9 +155,9 @@ margin-bottom: 50px;
     border: dotted;
     border-width: medium;
 }
-.steps-list-class
+.steps-list-text
 {
-    margin: 10px;
+    margin-bottom: 20px;
 }
 .button
 {
